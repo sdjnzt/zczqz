@@ -143,7 +143,7 @@ const trackRecords = ref<TrackRecord[]>([
     userName: '张明',
     userRole: '科员',
     fromDept: '政府办公室',
-    time: '2023-05-15 09:30:45',
+    time: '2025-06-15 09:30:45',
     content: '创建了公文《关于加强城镇基层治理的通知》',
     attachments: []
   },
@@ -154,7 +154,7 @@ const trackRecords = ref<TrackRecord[]>([
     userName: '李强',
     userRole: '主任',
     fromDept: '政府办公室',
-    time: '2023-05-15 10:15:22',
+    time: '2025-06-15 10:15:22',
     content: '收到公文《关于加强城镇基层治理的通知》',
     attachments: []
   },
@@ -166,7 +166,7 @@ const trackRecords = ref<TrackRecord[]>([
     userRole: '主任',
     fromDept: '政府办公室',
     toDept: '民政所',
-    time: '2023-05-15 11:30:15',
+    time: '2025-06-15 11:30:15',
     content: '转发公文至民政所',
     comment: '请民政所提供相关意见',
     attachments: []
@@ -178,7 +178,7 @@ const trackRecords = ref<TrackRecord[]>([
     userName: '王佳',
     userRole: '所长',
     fromDept: '民政所',
-    time: '2023-05-15 13:45:30',
+    time: '2025-06-15 13:45:30',
     content: '收到公文《关于加强城镇基层治理的通知》',
     attachments: []
   },
@@ -189,7 +189,7 @@ const trackRecords = ref<TrackRecord[]>([
     userName: '王佳',
     userRole: '所长',
     fromDept: '民政所',
-    time: '2023-05-16 09:20:10',
+    time: '2025-06-16 09:20:10',
     content: '审批通过公文',
     comment: '同意该通知内容，建议加强社区网格员管理，提高基层治理能力。',
     attachments: [
@@ -270,7 +270,7 @@ const loadTrackRecords = () => {
         userName: '张明',
         userRole: '科员',
         fromDept: '政府办公室',
-        time: '2023-05-16 14:30:45',
+        time: '2025-06-16 14:30:45',
         content: `创建了公文`,
         attachments: []
       },
@@ -281,7 +281,7 @@ const loadTrackRecords = () => {
         userName: '李强',
         userRole: '主任',
         fromDept: '政府办公室',
-        time: '2023-05-16 15:15:22',
+        time: '2025-06-16 15:15:22',
         content: `收到公文`,
         attachments: []
       }

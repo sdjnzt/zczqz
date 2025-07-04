@@ -495,7 +495,7 @@ const getCategoryStats = () => {
 }
 
 const getYearStats = () => {
-  const years = ['2021', '2022', '2023', '2024', '2025']
+  const years = ['2021', '2022', '2025', '2024', '2025']
   return years.map((year, index) => {
     const count = policies.value.filter(policy => policy.publishDate.startsWith(year)).length
     const percent = Math.round((count / policies.value.length) * 100)

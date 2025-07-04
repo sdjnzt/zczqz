@@ -49,7 +49,7 @@
       <el-tabs v-model="activeTab" class="policy-tabs">
         <el-tab-pane label="最新政策" name="latest">
           <div class="latest-policies">
-            <div class="policy-item" v-for="(policy, index) in latestPolicies" :key="policy.id">
+            <div class="policy-item" v-for="policy in latestPolicies" :key="policy.id">
               <h4 class="title" @click="viewPolicy(policy.id)">
                 <el-icon class="icon"><Document /></el-icon>
                 {{ policy.title }}
@@ -100,7 +100,7 @@
                 <el-icon><ArrowRight /></el-icon>
               </span>
             </div>
-            <div class="policy-item" v-for="(policy, index) in hotPolicies" :key="policy.id">
+            <div class="policy-item" v-for="policy in hotPolicies" :key="policy.id">
               <h4 class="title" @click="viewPolicy(policy.id)">
                 <el-icon class="icon"><HotWater /></el-icon>
                 {{ policy.title }}
@@ -245,7 +245,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage } from 'element-plus'
 import { 
   Search,
   Download,
@@ -445,11 +445,6 @@ const currentPolicies = computed(() => {
   return activeTab.value === 'latest' ? latestPolicies.value : hotPolicies.value
 })
 
-// 根据分页获取政策数据
-const getPaginatedPolicies = computed(() => {
-  return currentPolicies.value.slice(0, pageSize.value)
-})
-
 // 处理页面变化
 const handlePageChange = (page: number) => {
   // 在实际应用中，这里需要根据页码获取数据
@@ -516,25 +511,6 @@ const navigateToCategory = (id: string) => {
     path: '/policy/category',
     query: { id }
   })
-}
-
-// 获取分类名称
-const getCategoryName = (categoryId: string) => {
-  const category = categories.find(item => item.value === categoryId)
-  return category ? category.label : categoryId
-}
-
-// 获取标签类型
-const getTagType = (categoryId: string) => {
-  const typeMap: { [key: string]: string } = {
-    'agriculture': 'success',
-    'education': 'primary',
-    'healthcare': 'info',
-    'social-security': 'warning',
-    'finance': 'danger',
-    'construction': ''
-  }
-  return typeMap[categoryId] || ''
 }
 
 // 格式化日期
