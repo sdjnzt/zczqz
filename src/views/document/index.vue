@@ -378,33 +378,33 @@ const submitDocument = (formData: any) => {
 }
 
 // 查看公文
-const viewDocument = (doc) => {
+const viewDocument = (doc: PendingDocument | ProcessedDocument | CreatedDocument) => {
   currentDocument.value = doc
   handleDialogVisible.value = true
   dialogTitle.value = '查看公文'
 }
 
 // 处理公文
-const handleDocument = (doc) => {
+const handleDocument = (doc: PendingDocument) => {
   currentDocument.value = doc
   handleDialogVisible.value = true
   dialogTitle.value = '处理公文'
 }
 
 // 转发公文
-const transferDocument = (doc) => {
+const transferDocument = (doc: PendingDocument) => {
   currentDocument.value = doc
   handleDialogVisible.value = true
   dialogTitle.value = '转发公文'
 }
 
 // 撤回公文
-const revokeDocument = (doc) => {
+const revokeDocument = (doc: CreatedDocument) => {
   ElMessage.info(`模拟撤回公文: ${doc.title}`)
 }
 
 // 跟踪公文
-const trackDocument = (doc) => {
+const trackDocument = (doc: PendingDocument | ProcessedDocument | CreatedDocument) => {
   currentDocument.value = doc
   trackDialogVisible.value = true
 }
@@ -417,7 +417,7 @@ const handleSubmit = (formData: DocumentHandleFormData) => {
   
   // 模拟API提交
   setTimeout(() => {
-    const docId = currentDocument.value.id
+    const docId = currentDocument.value!.id
     
     if (formData.action === 'approve') {
       // 模拟批准处理

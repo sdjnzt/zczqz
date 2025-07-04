@@ -119,8 +119,23 @@ const props = defineProps({
   }
 })
 
+// 定义流转记录类型
+interface TrackRecord {
+  id: string;
+  documentId: string;
+  action: string;
+  userName: string;
+  userRole: string;
+  fromDept: string;
+  time: string;
+  content: string;
+  toDept?: string;
+  comment?: string;
+  attachments: Array<{ name: string; url: string }>;
+}
+
 // 流转记录
-const trackRecords = ref([
+const trackRecords = ref<TrackRecord[]>([
   {
     id: '1',
     documentId: '1',
@@ -256,7 +271,8 @@ const loadTrackRecords = () => {
         userRole: '科员',
         fromDept: '政府办公室',
         time: '2023-05-16 14:30:45',
-        content: `创建了公文`
+        content: `创建了公文`,
+        attachments: []
       },
       {
         id: '2',
@@ -266,7 +282,8 @@ const loadTrackRecords = () => {
         userRole: '主任',
         fromDept: '政府办公室',
         time: '2023-05-16 15:15:22',
-        content: `收到公文`
+        content: `收到公文`,
+        attachments: []
       }
     ]
   }

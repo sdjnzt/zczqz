@@ -243,21 +243,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { 
   Search,
   Download,
-  Document, 
-  DocumentChecked,
+  Document,
   Collection,
-  Location,
-  Money,
-  House,
-  Crop,
-  Van,
-  School,
   OfficeBuilding,
   Calendar,
   ArrowRight,
@@ -447,6 +440,16 @@ const policyCategories = ref([
   }
 ])
 
+// 获取当前政策数据
+const currentPolicies = computed(() => {
+  return activeTab.value === 'latest' ? latestPolicies.value : hotPolicies.value
+})
+
+// 根据分页获取政策数据
+const getPaginatedPolicies = computed(() => {
+  return currentPolicies.value.slice(0, pageSize.value)
+})
+
 // 处理页面变化
 const handlePageChange = (page: number) => {
   // 在实际应用中，这里需要根据页码获取数据
@@ -460,8 +463,11 @@ const handleSearch = () => {
     ElMessage.warning('请输入搜索关键词')
     return
   }
-  // 在实际应用中，这里需要根据关键词获取数据
-  ElMessage.success(`正在搜索: ${searchKeyword.value}`)
+  
+  router.push({
+    path: '/policy/list',
+    query: { keyword: searchKeyword.value.trim() }
+  })
 }
 
 // 处理分类变化
@@ -496,9 +502,7 @@ const downloadPolicy = (policy: any) => {
 
 // 查看政策解读详情
 const viewInterpretation = (id: number) => {
-  ElMessageBox.alert('此功能正在建设中', '功能提示', {
-    confirmButtonText: '确定'
-  })
+  router.push(`/policy/interpretation/${id}`)
 }
 
 // 查看原文
@@ -536,11 +540,6 @@ const getTagType = (categoryId: string) => {
 // 格式化日期
 const formatDate = (dateStr: string) => {
   return dateStr
-}
-
-// 处理行点击
-const handleRowClick = (row: any) => {
-  viewPolicy(row.id)
 }
 
 // 下载政策模板
@@ -584,8 +583,8 @@ const focusSearch = () => {
 }
 
 onMounted(() => {
-  // 初始化数据，在实际应用中这里会从API获取数据
-  ElMessage.success('政策法规查询系统初始化完成')
+  // 这里应该从API获取数据
+  console.log('政策中心页面已加载')
 })
 </script>
 

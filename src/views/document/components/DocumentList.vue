@@ -224,7 +224,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import { Search, Refresh, ArrowDown, ArrowUp, View, Edit, SwitchButton, Back, Connection, Filter } from '@element-plus/icons-vue'
+import { Search, Refresh, View, Edit, SwitchButton, Back, Connection } from '@element-plus/icons-vue'
 import type { Document } from '@/types/document'
 
 // 接收props

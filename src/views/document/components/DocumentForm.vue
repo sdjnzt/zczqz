@@ -86,7 +86,7 @@ const emit = defineEmits(['submit', 'cancel'])
 const formRef = ref<FormInstance>()
 
 // 文件列表
-const fileList = ref([])
+const fileList = ref<Array<any>>([])
 
 // 公文类型选项
 const documentTypes = [
@@ -120,7 +120,7 @@ const formData = reactive({
   receiver: '',
   urgency: '平件',
   content: '',
-  attachments: []
+  attachments: [] as Array<{ name: string; url: string }>
 })
 
 // 表单验证规则
@@ -144,8 +144,14 @@ const formRules = {
   ]
 }
 
+// 定义上传文件类型
+interface UploadFile {
+  name: string;
+  raw: File;
+}
+
 // 文件变更处理
-const handleFileChange = (uploadFile, uploadFiles) => {
+const handleFileChange = (_uploadFile: any, uploadFiles: Array<UploadFile>) => {
   fileList.value = uploadFiles
   formData.attachments = uploadFiles.map(file => ({
     name: file.name,
@@ -154,7 +160,7 @@ const handleFileChange = (uploadFile, uploadFiles) => {
 }
 
 // 移除文件
-const handleRemove = (uploadFile, uploadFiles) => {
+const handleRemove = (_uploadFile: any, uploadFiles: Array<UploadFile>) => {
   fileList.value = uploadFiles
   formData.attachments = uploadFiles.map(file => ({
     name: file.name,
@@ -166,7 +172,7 @@ const handleRemove = (uploadFile, uploadFiles) => {
 const submitForm = async () => {
   if (!formRef.value) return
   
-  await formRef.value.validate((valid, fields) => {
+  await formRef.value.validate((valid) => {
     if (valid) {
       emit('submit', { ...formData })
     }
