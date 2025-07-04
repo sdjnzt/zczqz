@@ -15,12 +15,34 @@
           text-color="#bfcbd9"
           active-text-color="#409EFF"
         >
-          <el-menu-item v-for="item in routes" :key="item.path" :index="'/' + item.path" class="menu-item">
-            <el-icon class="menu-icon"><component :is="item.meta?.icon" /></el-icon>
-            <template #title>
-              <span class="menu-title">{{ item.meta?.title }}</span>
-            </template>
-          </el-menu-item>
+          <template v-for="item in routes" :key="item.path">
+            <!-- 嵌套菜单 -->
+            <el-sub-menu v-if="item.children && item.children.length > 0" :index="'/' + item.path">
+              <template #title>
+                <el-icon class="menu-icon"><component :is="item.meta?.icon" /></el-icon>
+                <span class="menu-title">{{ item.meta?.title }}</span>
+              </template>
+              <el-menu-item 
+                v-for="child in filterHiddenRoutes(item.children)" 
+                :key="'/' + item.path + '/' + child.path" 
+                :index="'/' + item.path + '/' + child.path"
+                class="menu-item"
+              >
+                <el-icon class="menu-icon" v-if="child.meta?.icon"><component :is="child.meta?.icon" /></el-icon>
+                <template #title>
+                  <span class="menu-title">{{ child.meta?.title }}</span>
+                </template>
+              </el-menu-item>
+            </el-sub-menu>
+            
+            <!-- 普通菜单 -->
+            <el-menu-item v-else :index="'/' + item.path" class="menu-item">
+              <el-icon class="menu-icon"><component :is="item.meta?.icon" /></el-icon>
+              <template #title>
+                <span class="menu-title">{{ item.meta?.title }}</span>
+              </template>
+            </el-menu-item>
+          </template>
         </el-menu>
       </el-scrollbar>
     </el-aside>
@@ -81,6 +103,11 @@ const isCollapse = ref(false)
 const routes = computed(() => {
   return router.options.routes.find(r => r.path === '/' && r.children)?.children || []
 })
+
+// 过滤隐藏路由
+const filterHiddenRoutes = (routes: any[]) => {
+  return routes.filter(route => !route.meta?.hidden)
+}
 
 const toggleCollapse = () => {
   isCollapse.value = !isCollapse.value

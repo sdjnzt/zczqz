@@ -28,6 +28,50 @@ const router = createRouter({
           meta: { title: '首页', icon: 'House' }
         },
         {
+          path: 'policy',
+          name: 'Policy',
+          redirect: '/policy/index',
+          meta: { title: '政策法规', icon: 'DocumentChecked' },
+          children: [
+            {
+              path: 'index',
+              name: 'PolicyIndex',
+              component: () => import(/* webpackChunkName: "policy" */ '@/views/policy/index.vue'),
+              meta: { title: '政策概览' }
+            },
+            {
+              path: 'list',
+              name: 'PolicyList',
+              component: () => import(/* webpackChunkName: "policy-list" */ '@/views/policy/list.vue'),
+              meta: { title: '政策列表' }
+            },
+            {
+              path: 'category',
+              name: 'PolicyCategory',
+              component: () => import(/* webpackChunkName: "policy-category" */ '@/views/policy/category.vue'),
+              meta: { title: '政策分类' }
+            },
+            {
+              path: 'detail/:id',
+              name: 'PolicyDetail',
+              component: () => import(/* webpackChunkName: "policy-detail" */ '@/views/policy/detail.vue'),
+              meta: { title: '政策详情', hidden: true }
+            }
+          ]
+        },
+        {
+          path: 'document',
+          name: 'Document',
+          component: () => import(/* webpackChunkName: "document" */ '@/views/document/index.vue'),
+          meta: { title: '公文流转', icon: 'Document' }
+        },
+        // {
+        //   path: 'meeting',
+        //   name: 'Meeting',
+        //   component: () => import(/* webpackChunkName: "meeting" */ '@/views/meeting/index.vue'),
+        //   meta: { title: '会议安排', icon: 'Calendar' }
+        // },
+        {
           path: 'user',
           name: 'User',
           component: () => import(/* webpackChunkName: "user" */ '@/views/user/index.vue'),
@@ -75,48 +119,12 @@ const router = createRouter({
           component: () => import('@/views/system/index.vue'),
           meta: { title: '业务系统', icon: 'Cpu' }
         },
-        // {
-        //   path: 'device',
-        //   name: 'Device',
-        //   component: () => import('@/views/device/index.vue'),
-        //   meta: { title: '设备管理', icon: 'Monitor' }
-        // },
-        // {
-        //   path: 'resource',
-        //   name: 'Resource',
-        //   component: () => import('@/views/resource/index.vue'),
-        //   meta: { title: '资源管理', icon: 'Connection' }
-        // },
-        // {
-        //   path: 'data',
-        //   name: 'Data',
-        //   component: () => import('@/views/data/index.vue'),
-        //   meta: { title: '数据服务', icon: 'DataLine' }
-        // },
-        // {
-        //   path: 'health',
-        //   name: 'Health',
-        //   component: () => import('@/views/health/index.vue'),
-        //   meta: { title: '服务健康', icon: 'CircleCheck' }
-        // },
-        // {
-        //   path: 'energy',
-        //   name: 'Energy',
-        //   component: () => import('@/views/energy/index.vue'),
-        //   meta: { title: '能耗监控', icon: 'PieChart' }
-        // },
         {
           path: 'backup',
           name: 'Backup',
           component: () => import('@/views/backup/index.vue'),
           meta: { title: '备份任务', icon: 'DocumentCopy' }
-        },
-        // {
-        //   path: 'hardware',
-        //   name: 'Hardware',
-        //   component: () => import('@/views/hardware/index.vue'),
-        //   meta: { title: '硬件资源管理', icon: 'Connection' }
-        // }
+        }
       ]
     }
   ]
