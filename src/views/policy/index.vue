@@ -440,10 +440,7 @@ const policyCategories = ref([
   }
 ])
 
-// 获取当前政策数据
-const currentPolicies = computed(() => {
-  return activeTab.value === 'latest' ? latestPolicies.value : hotPolicies.value
-})
+// currentPolicies removed as it's not being used
 
 // 处理页面变化
 const handlePageChange = (page: number) => {
