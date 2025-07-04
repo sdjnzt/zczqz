@@ -336,7 +336,7 @@ const policyData = [
     summary: '规范城前镇农村宅基地管理，保障农民合法权益，促进农村和谐稳定。',
     category: 'construction',
     level: 'town',
-    publishDate: '2025-05-20',
+    publishDate: '2025-06-20',
     source: '邹城市自然资源局',
     views: 198,
     status: 'active'
@@ -347,7 +347,7 @@ const policyData = [
     summary: '加强基层医疗卫生服务体系建设，提高农村医疗服务质量和水平。',
     category: 'healthcare',
     level: 'city',
-    publishDate: '2025-05-15',
+    publishDate: '2025-06-15',
     source: '邹城市卫健委',
     views: 165,
     status: 'active'
@@ -358,7 +358,7 @@ const policyData = [
     summary: '明确农业生产补贴政策的实施范围、申请条件、补贴标准和程序。',
     category: 'agriculture',
     level: 'town',
-    publishDate: '2025-05-10',
+    publishDate: '2025-06-10',
     source: '邹城市财政局',
     views: 320,
     status: 'active'
@@ -369,7 +369,7 @@ const policyData = [
     summary: '推进城前镇义务教育优质均衡发展，缩小城乡教育差距。',
     category: 'education',
     level: 'county',
-    publishDate: '2025-05-05',
+    publishDate: '2025-06-05',
     source: '邹城市教育局',
     views: 185,
     status: 'active'
@@ -380,7 +380,7 @@ const policyData = [
     summary: '健全完善城前镇乡村治理体系，提升乡村治理能力和水平。',
     category: 'social-security',
     level: 'county',
-    publishDate: '2025-05-01',
+    publishDate: '2025-06-01',
     source: '邹城市民政局',
     views: 176,
     status: 'active'
@@ -391,7 +391,7 @@ const policyData = [
     summary: '加强耕地保护，提升耕地质量，保障粮食安全。',
     category: 'agriculture',
     level: 'provincial',
-    publishDate: '2025-04-15',
+    publishDate: '2025-06-15',
     source: '山东省农业农村厅',
     views: 210,
     status: 'active'
@@ -402,7 +402,7 @@ const policyData = [
     summary: '改善农村人居环境，建设美丽宜居乡村。',
     category: 'construction',
     level: 'city',
-    publishDate: '2025-04-10',
+    publishDate: '2025-06-10',
     source: '邹城市农业农村局',
     views: 132,
     status: 'active'
@@ -413,7 +413,7 @@ const policyData = [
     summary: '开展农村人居环境整治，提升农村生活品质。',
     category: 'construction',
     level: 'town',
-    publishDate: '2025-04-05',
+    publishDate: '2025-06-05',
     source: '邹城市城前镇人民政府',
     views: 156,
     status: 'active'
@@ -424,7 +424,7 @@ const policyData = [
     summary: '完善新型农村合作医疗制度，提高农村医疗保障水平。',
     category: 'healthcare',
     level: 'town',
-    publishDate: '2025-04-01',
+    publishDate: '2025-06-01',
     source: '邹城市城前镇人民政府',
     views: 190,
     status: 'active'
@@ -435,7 +435,7 @@ const policyData = [
     summary: '全面实施乡村振兴战略，加快推进农业农村现代化。',
     category: 'agriculture',
     level: 'national',
-    publishDate: '2025-03-20',
+    publishDate: '2025-06-20',
     source: '中共中央、国务院',
     views: 458,
     status: 'active'
@@ -446,7 +446,7 @@ const policyData = [
     summary: '推进城乡一体化发展，缩小城乡差距。',
     category: 'construction',
     level: 'city',
-    publishDate: '2025-03-15',
+    publishDate: '2025-06-15',
     source: '邹城市发改委',
     views: 178,
     status: 'active'

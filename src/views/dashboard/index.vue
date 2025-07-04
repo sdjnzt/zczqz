@@ -384,8 +384,8 @@
       name: '城前镇智慧农业示范基地建设', 
       manager: '李大勇', 
       department: '农业发展科', 
-      startDate: '2025-01-15', 
-      endDate: '2025-12-31', 
+      startDate: '2025-06-15',
+      endDate: '2025-06-31',
       status: '进行中',
       progress: 45
     },
@@ -394,7 +394,7 @@
       manager: '王建国', 
       department: '民政科', 
       startDate: '2025-06-01',
-      endDate: '2025-08-31', 
+      endDate: '2025-06-31',
       status: '进行中',
       progress: 68
     },
@@ -402,8 +402,8 @@
       name: '城前镇应急指挥系统升级工程', 
       manager: '张丽敏', 
       department: '应急管理办', 
-      startDate: '2025-02-10', 
-      endDate: '2025-07-15', 
+      startDate: '2025-06-10',
+      endDate: '2025-06-15',
       status: '进行中',
       progress: 85
     },
@@ -411,8 +411,8 @@
       name: '农村道路智能监控系统建设', 
       manager: '陈明辉', 
       department: '交通科', 
-      startDate: '2025-04-01', 
-      endDate: '2025-10-31', 
+      startDate: '2025-06-01',
+      endDate: '2025-06-31',
       status: '延期',
       progress: 32
     },
@@ -421,7 +421,7 @@
       manager: '周雪梅', 
       department: '信息科', 
       startDate: '2025-06-15',
-      endDate: '2025-09-30', 
+      endDate: '2025-06-30',
       status: '进行中',
       progress: 52
     }

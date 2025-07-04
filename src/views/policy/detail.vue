@@ -352,7 +352,7 @@ const relatedPolicies = ref([
     title: '城前镇农业生产补贴政策实施细则',
     summary: '明确农业生产补贴政策的实施范围、申请条件、补贴标准和程序。',
     category: 'agriculture',
-    publishDate: '2025-05-10',
+    publishDate: '2025-06-10',
     source: '邹城市财政局',
     views: 320
   },
@@ -361,7 +361,7 @@ const relatedPolicies = ref([
     title: '城前镇农村宅基地管理办法（试行）',
     summary: '规范城前镇农村宅基地管理，保障农民合法权益，促进农村和谐稳定。',
     category: 'construction',
-    publishDate: '2025-05-20',
+    publishDate: '2025-06-20',
     source: '邹城市自然资源局',
     views: 198
   },
@@ -370,7 +370,7 @@ const relatedPolicies = ref([
     title: '关于加强城前镇乡村治理体系建设的指导意见',
     summary: '健全完善城前镇乡村治理体系，提升乡村治理能力和水平。',
     category: 'social-security',
-    publishDate: '2025-05-01',
+    publishDate: '2025-06-01',
     source: '邹城市民政局',
     views: 176
   }
